@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis配置文件-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suancaiyu.mapper.TagMapper">
+    <select id="FindByArticleId" resultType="com.suancaiyu.pojo.Tag" parameterType="Long">
+        select id,avatar,tag_name as tagname from ms_tag
+        where id in
+        (select tag_id from ms_article_tag where article_id=#{id})
+    </select>
+    <!--    public List<Long> FindHotTagId(int limt);-->
+    <select id="FindHotTagId" resultType="java.lang.Long" parameterType="int">
+        select tag_id from ms_article_tag group by tag_id order by count(*) desc limit 6
+    </select>
+    <!--  List<Tag> FindById(List<Long> tagIdList);  -->
+    <select id="FindById" parameterType="list" resultType="com.suancaiyu.pojo.Tag">
+        select id,tag_name as tagName from ms_tag
+        where id in
+        <foreach collection="tagIdList" item="tagId" separator="," open="(" close=")">
+            #{tagId}
+        </foreach>
+    </select>
+</mapper>

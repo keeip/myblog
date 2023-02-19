@@ -1,0 +1,31 @@
+{
+  "id": "3903328",
+  "name": "666",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-111",
+  "description": "2",
+  "glyphs": [
+    {
+      "icon_id": "4936984",
+      "name": "QQ",
+      "font_class": "QQ",
+      "unicode": "e882",
+      "unicode_decimal": 59522
+    },
+    {
+      "icon_id": "26267572",
+      "name": "gitee",
+      "font_class": "gitee",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "4937000",
+      "name": "github-fill",
+      "font_class": "github-fill",
+      "unicode": "e885",
+      "unicode_decimal": 59525
+    }
+  ]
+}
+
